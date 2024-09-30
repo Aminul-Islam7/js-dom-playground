@@ -2,7 +2,10 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	transition: 0.4s;
+	transition: 0.2s;
+	font-family: 'Maven Pro', sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
 }
 
 body {
@@ -10,4 +13,27 @@ body {
 }
 
 .container {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.card {
+	max-width: 400px;
+	padding: 30px;
+	color: #eee;
+	background-color: #444;
+	border-radius: 10px;
+	line-height: 22px;
+}
+
+.see-more {
+	background: none;
+	border: none;
+	font-size: 16px;
+	font-weight: 500;
+	color: #eee;
+	margin-top: 5px;
+	cursor: pointer;
 }
