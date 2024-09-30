@@ -23,7 +23,7 @@ for (let card of cards) {
 		}
 	};
 
-	if (paragraph.innerText.length > 100) {
+	if (paragraph.innerText.length > characterLimit) {
 		// Stores and displays first 'characterLimit' characters of the text
 		shortenedText = paragraph.innerText.substring(0, characterLimit) + '...';
 		paragraph.innerText = shortenedText;
