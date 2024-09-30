@@ -13,15 +13,20 @@ body {
 }
 
 .container {
+	max-width: 1440px;
 	height: 100vh;
 	display: flex;
 	align-items: center;
+	align-content: center;
 	justify-content: center;
+	flex-wrap: wrap;
+	padding: 20px;
 }
 
 .card {
 	max-width: 400px;
 	padding: 30px;
+	margin: 5px 10px;
 	color: #eee;
 	background-color: #444;
 	border-radius: 10px;
@@ -29,6 +34,7 @@ body {
 }
 
 .see-more {
+	display: none;
 	background: none;
 	border: none;
 	font-size: 16px;
