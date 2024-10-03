@@ -34,3 +34,29 @@ for (let card of cards) {
 	// See more button on click action
 	btnSeeMore.addEventListener('click', toggleText);
 }
+
+// Select collapse button and sidebar
+const btnCollapse = document.getElementById('collapse-btn');
+const sidebar = document.getElementById('sidebar');
+
+let sidebarExpanded = false;
+
+// Toggles the sidebar collapse or expand
+const toggleSidebar = function () {
+	sidebar.classList.toggle('collapsed');
+	sidebarExpanded = sidebarExpanded ? false : true;
+};
+
+// Collapse button on-click action
+btnCollapse.addEventListener('click', toggleSidebar);
+
+// Collapses or expands sidebar when the menus are hovered
+const menus = document.querySelectorAll('#sidebar li');
+for (let menu of menus) {
+	menu.addEventListener('mouseenter', function () {
+		sidebar.classList.remove('collapsed');
+	});
+	menu.addEventListener('mouseleave', function () {
+		if (!sidebarExpanded) sidebar.classList.add('collapsed'); // Collapse only if the sidebar is not expanded using button
+	});
+}

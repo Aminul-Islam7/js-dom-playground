@@ -10,6 +10,7 @@
 body {
 	background-color: #000f1f;
 	display: flex;
+	height: 100vh;
 }
 
 a {
@@ -52,17 +53,14 @@ main {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	/* position: fixed;
-	top: 0;
-	left: 0; */
 	min-width: 280px;
-	height: 100vh;
+	/* height: 100%; */
 	background: #003459;
-	z-index: 3;
+	transition: 0.4s;
+	overflow: hidden;
 }
 
 #sidebar .logo img {
-	/* display: block; */
 	width: 50px;
 	margin: 10px;
 }
@@ -85,8 +83,10 @@ main {
 	margin: 2px 10px;
 }
 
-#sidebar li a:hover {
+#sidebar li a:hover,
+#sidebar li.active a {
 	background: rgb(0, 133, 204, 0.4);
+	box-shadow: 1px 1px 4px -1px rgb(0, 15, 31, 0.75);
 }
 
 #sidebar li a .icon {
@@ -101,7 +101,10 @@ main {
 }
 
 #sidebar li a .menu-text {
-	margin-left: 20px;
+	position: absolute;
+	margin-left: 65px;
+	transition: 0.2s;
+	opacity: 1;
 }
 
 #collapse-btn {
@@ -113,7 +116,11 @@ main {
 	font-size: 20px;
 	color: #f0f8ff;
 	margin: 10px;
+	margin-bottom: 20px;
 	border-radius: 10px;
+}
+
+#collapse-btn i {
 	transition: 0.4s;
 }
 
@@ -126,11 +133,12 @@ main {
 }
 
 #sidebar.collapsed .menu-text {
-	display: none;
+	opacity: 0;
 }
 
-#sidebar.collapsed #collapse-btn {
+#sidebar.collapsed #collapse-btn i {
 	transform: rotate(180deg);
+	transition: 0.4s;
 }
 
 .overlay {
